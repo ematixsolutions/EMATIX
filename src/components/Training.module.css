@@ -1,0 +1,101 @@
+.train {
+  /* padding: 100px; */
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
+}
+
+.train1 {
+  /* display: flex; */
+  text-align: center;
+  max-width: 100%;
+  height: 100px;
+  padding: 130px;
+  background-color: #27acd0;
+  margin-bottom: 30px;
+}
+
+.cardsContainer {
+  display: grid; /* Use CSS Grid for a flexible layout */
+  grid-template-columns: repeat(2, 1fr); /* This will create two equal columns */
+  gap: 90px; /* Space between the cards */
+  margin-top: 20px;
+  padding: 70px;
+}
+
+.cardLink {
+  text-decoration: none; /* Remove default link styling */
+}
+
+.card {
+  background-color: #27acd0;
+  padding: 20px;
+  height: 400px;
+  width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.cardImage {
+  width: 100%; /* Make the image fill the width of the card */
+  height: 300px; /* Fixed height for the image */
+  object-fit: cover; /* Make sure the image covers the space without stretching */
+  border-radius: 8px;
+  margin-bottom: 30px; /* Space between the image and text */
+}
+
+.card h2 {
+  color: #fcfcfc;
+  margin-bottom: 15px;
+}
+
+/* Typing effect for <p> tag */
+
+.card p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #090808;
+  overflow: hidden; /* Hide the text until it's fully typed */
+  white-space: nowrap; /* Prevent text from wrapping to a new line */
+  border-right: 3px solid #333; /* Create the cursor effect */
+  display: inline-block; /* Required for width to work */
+  width: 0; /* Start with no visible text */
+  animation: typing 6s steps(30, end) infinite, blink 0.5s step-end infinite;
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+  0% {
+    width: 0; /* Start with no text */
+  }
+  70% {
+    width: 100%; /* Fully visible text */
+  }
+  100% {
+    width: 0; /* Instantly reset to loop */
+  }
+}
+
+/* Keyframes for cursor blinking */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card:active {
+  transform: translateY(2px);
+}
+
+/* Responsive Design: On smaller screens, show one card per row */
+@media (max-width: 768px) {
+  .cardsContainer {
+    grid-template-columns: 1fr; /* Show one card per row on smaller screens */
+  }
+}
